@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: sweetclimusic/barsoom@0.0.5
+        uses: sweetclimusic/barsoom@0.0.6
         with:
           caller: 'Brown'
       # Use the output from the `hello` step
