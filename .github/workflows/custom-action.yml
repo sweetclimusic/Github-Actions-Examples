@@ -14,7 +14,7 @@ jobs:
         id: hello
         uses: sweetclimusic/barsoom@0.0.6
         with:
-          caller: 'Brown'
+          caller: ${{github.event.client_payload.caller}}
       # Use the output from the `hello` step
       - name: Get the Output
         run: echo "The message was ${{ steps.hello.outputs.message }}"
