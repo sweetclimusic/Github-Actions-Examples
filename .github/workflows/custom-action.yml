@@ -1,0 +1,20 @@
+name: "Barsoom Greeting"
+
+on: 
+  repository_dispatch:
+    types: 
+      - webhook
+
+jobs:
+  my-job-responding:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: sweetclimusic/barsoom@0.0.1
+        with:
+          caller: 'Brown'
+      # Use the output from the `hello` step
+      - name: Get the Output
+        run: echo "The message was ${{ steps.hello.outputs.message }}"
